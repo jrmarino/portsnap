@@ -138,11 +138,11 @@ portify(char * line)
 	PORT * p;
 	size_t i, n;
 
-	/* Verify that line has the right number of fields */
+	/* Verify that line has at least 13 fields */
 	for (n = i = 0; line[i] != 0; i++)
 		if (line[i] == '|')
 			n++;
-	if (n != 12)
+	if (n < 12)
 		errx(1, "Port describe line is corrupt:\n%s\n", line);
 
 	p = malloc(sizeof(PORT));
