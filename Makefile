@@ -1,8 +1,6 @@
-all:		make_index phttpget
+all:		make_index
 
 make_index:	make_index.c
-
-phttpget:	phttpget.c
 
 install:
 	install -m 555 portsnap /usr/local/sbin
